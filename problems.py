@@ -31,6 +31,23 @@
 #     return False
 
 
+def longest_palidrom_substr(input_str):
+    l = 0
+    r = len(input_str)
+    counter = 0
+    while counter < r:
+        #print(input_str[counter:r])
+        if input_str[counter:r] == input_str[counter:r][::-1]:
+            return input_str[counter:r]
+        counter = counter + 1
+    counter = len(input_str)
+    while counter > l:
+        #print(input_str[l:counter])
+        if input_str[l:counter] == input_str[l:counter][::-1]:
+            return input_str[l:counter]
+        counter = counter - 1
+    return None
+
 def get_sum_position(nums, target):
     tmp_dict = {}
     for i, item in enumerate(nums):
