@@ -86,6 +86,22 @@ def reverse(x):
             return int(str(x*-1)[::-1])*-1
     return 0
 
+def shift_all_0_left(input_str):
+    input_str = list(input_str)
+    l = 0
+    r = len(input_str) - 1
+    while l < r:
+        if input_str[l] == '0':
+            l = l + 1
+            continue
+        if input_str[r] == '1':
+            r = r - 1
+            continue
+        input_str[l], input_str[r] = input_str[r], input_str[l]
+        l = l + 1
+        r = r - 1
+    return "".join(input_str)
+
 
 def myAtoi(s):
     s1 = s.rstrip()
